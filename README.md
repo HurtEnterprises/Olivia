@@ -1,3 +1,3 @@
 # Olivia
 
-A perosnal Healthcare Assistant. 
+A personal Healthcare Assistant. 
