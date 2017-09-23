@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.microsoft.hsg.android.hvsample"
+        minSdkVersion 23
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE'
+    }
+    lintOptions {
+        warning 'InvalidPackage'
+    }
+}
+
+dependencies {
+    compile(name:'android-sdk-simplexml-release', ext:'aar')
+    compile(name:'android-sdk-restclient-release', ext:'aar')
+    compile group: 'io.reactivex', name: 'rxjava', version: '1.2.4'
+    compile group: 'com.microsoft.rest', name: 'client-runtime', version: '1.0.2'
+    compile group: 'de.mindpipe.android', name: 'android-logging-log4j', version: '1.0.3'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.jjoe64:graphview:4.2.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile ('org.simpleframework:simple-xml:2.7.1') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+}

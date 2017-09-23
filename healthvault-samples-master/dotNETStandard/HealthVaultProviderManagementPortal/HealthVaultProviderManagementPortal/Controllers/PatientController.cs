@@ -10,18 +10,21 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Mvc;
 using System.Threading.Tasks;
 using System.Web.Configuration;
+using System.Web.Routing;
+using HealthVaultProviderManagementPortal.Models.Enums;
 using HealthVaultProviderManagementPortal.Models.Patient;
-using Microsoft.HealthVault.Configuration;
+using Microsoft.HealthVault.RestApi.Generated;
 using Microsoft.HealthVault.Web.Attributes;
 using Microsoft.Rest;
 using Microsoft.Rest.Serialization;
 using Newtonsoft.Json;
 using NodaTime;
+using NodaTime.Extensions;
 using NodaTime.Serialization.JsonNet;
 using static HealthVaultProviderManagementPortal.Helpers.RestClientFactory;
 
@@ -33,6 +36,11 @@ namespace HealthVaultProviderManagementPortal.Controllers
     [RequireSignIn]
     public class PatientController : Controller
     {
+        private const string ApiVersion = "2.0-preview";
+
+        private static JsonSerializerSettings _serializerSettings = GetSerializationSettings();
+        private static JsonSerializerSettings _deserializerSettings = GetDeserializationSettings();
+
         /// <summary>
         /// Gets a the timeline for a patient
         /// </summary>
@@ -43,7 +51,7 @@ namespace HealthVaultProviderManagementPortal.Controllers
                 return View();
             }
 
-            var timeline = await GetTimeline(personId, recordId, startDate.Value, endDate);
+            var timeline = await GetTimeline(personId, recordId, startDate.Value, endDate, DateTimeZoneProviders.Tzdb.GetSystemDefault());
 
             var timelineEntries = new List<TimelineEntryViewModel>();
             foreach (var task in timeline.Tasks)
@@ -57,14 +65,41 @@ namespace HealthVaultProviderManagementPortal.Controllers
             {
                 StartDate = startDate,
                 EndDate = endDate,
-                TimelineEntries = groupedTimelineEntries
+                TimelineEntryGroups = groupedTimelineEntries
             };
 
             return View(model);
         }
 
-        private async Task<TimelineResponse> GetTimeline(Guid personId, Guid recordId, DateTime startDate, DateTime? endDate)
+        [HttpGet]
+        public async Task<ActionResult> TaskOccurrence(Guid personId, Guid recordId, Guid taskId)
         {
+            var response = await ExecuteMicrosoftHealthVaultRestApiAsync(api => api.ActionPlanTasks.GetByIdAsync(taskId), personId, recordId);
+            return View(response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> TaskOccurrence(Guid personId, Guid recordId, Guid taskId, DateTimeOffset trackingDateTime, DateTime? startDate, DateTime? endDate)
+        {
+            await PostTaskTracking(personId, recordId, taskId, trackingDateTime);
+            var routeValues = new RouteValueDictionary
+            {
+                {"startDate", startDate?.ToString("d")},
+                {"endDate", endDate?.ToString("d")},
+                {"personId", personId},
+                {"recordId", recordId},
+            };
+
+            return RedirectToAction("Index", routeValues);
+        }
+
+        private async Task<TimelineResponse> GetTimeline(Guid personId, Guid recordId, DateTime startDate, DateTime? endDate, DateTimeZone timeZone)
+        {
+            if (timeZone == null)
+            {
+                throw new ArgumentNullException(nameof(timeZone));
+            }
+
             var restHealthVaultUrl = WebConfigurationManager.AppSettings.Get("HV_RestHealthServiceUrl"); //TODO: use built in SDK function to retreive config settings when available
 
             // Construct URL
@@ -75,7 +110,8 @@ namespace HealthVaultProviderManagementPortal.Controllers
 
             var queryParameters = new List<string>
             {
-                $"startDate={startDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)}"
+                $"startDate={startDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)}",
+                $"timeZone={timeZone.Id}"
             };
 
             if (endDate != null)
@@ -83,14 +119,30 @@ namespace HealthVaultProviderManagementPortal.Controllers
                 queryParameters.Add($"endDate={endDate.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)}");
             }
 
-            if (queryParameters.Count > 0)
+            uriBuilder.Query = string.Join("&", queryParameters);
+
+            var responseContent = await ExecuteRestRequest(personId, recordId, uriBuilder.Uri, HttpMethod.Get, ApiVersion);
+
+            return SafeJsonConvert.DeserializeObject<TimelineResponse>(responseContent, _deserializerSettings);
+        }
+
+        private async Task PostTaskTracking(Guid personId, Guid recordId, Guid taskId, DateTimeOffset trackingDateTime)
+        {
+            var restHealthVaultUrl = WebConfigurationManager.AppSettings.Get("HV_RestHealthServiceUrl"); //TODO: use built in SDK function to retreive config settings when available
+
+            // Construct URL
+            var uriBuilder = new UriBuilder(restHealthVaultUrl)
             {
-                uriBuilder.Query = string.Join("&", queryParameters);
-            }
+                Path = "TaskTracking"
+            };
 
-            var responseContent = await ExecuteRestRequest(personId, recordId, uriBuilder.Uri, HttpMethod.Get, "2.0-preview");
+            var taskTracking = new
+            {
+                taskId,
+                trackingDateTime = trackingDateTime.ToZonedDateTime()
+            };
 
-            return SafeJsonConvert.DeserializeObject<TimelineResponse>(responseContent, GetDeserializationSettings());
+            await ExecuteRestRequest(personId, recordId, uriBuilder.Uri, HttpMethod.Post, ApiVersion, SafeJsonConvert.SerializeObject(taskTracking, _serializerSettings));
         }
 
         private static IList<TimelineEntryViewModel> ConvertToTimelineEntryViewModels(TimelineTask task)
@@ -109,18 +161,23 @@ namespace HealthVaultProviderManagementPortal.Controllers
                         if (schedule.LocalDateTime >= snapshot.EffectiveStartInstant.InUtc().LocalDateTime &&
                             schedule.LocalDateTime <= snapshot.EffectiveEndInstant.InUtc().LocalDateTime)
                         {
-                            // Add a timeline entry for the schedule
+                            // Add a timeline entry for the schedule. 
+                            // Count all occurences for a frequency task, and only in-window ones for a scheduled task
                             timelineEntries.Add(new TimelineEntryViewModel
                             {
                                 TaskId = task.TaskId,
                                 TaskName = task.TaskName,
                                 TaskImageUrl = task.TaskImageUrl,
                                 LocalDateTime = schedule.LocalDateTime,
-                                ScheduleType = schedule.Type
+                                ScheduleType = schedule.Type,
+                                CompletionMetrics = snapshot.CompletionMetrics,
+                                InWindowOccurrenceCount = schedule.Occurrences?.Count(o => o.InWindow || snapshot.CompletionMetrics.CompletionType == ActionPlanTaskCompletionType.Frequency) ?? 0
                             });
 
-                            // Add any out-of-window task occurrences to show on the timeline
-                            schedule.Occurrences?.Where(o => !o.InWindow).ToList().ForEach(occurrence => AddOccurrence(timelineEntries, occurrence, task)); ;
+                            // Add any out-of-window task occurrences for scheduled tasks to show on the timeline
+                            schedule.Occurrences?
+                                .Where(o => !o.InWindow && snapshot.CompletionMetrics.CompletionType == ActionPlanTaskCompletionType.Scheduled)
+                                .ToList().ForEach(occurrence => AddOccurrence(timelineEntries, occurrence, task));
                         }
                     }
                 }
@@ -151,15 +208,22 @@ namespace HealthVaultProviderManagementPortal.Controllers
             });
         }
 
-        private static async Task<string> ExecuteRestRequest(Guid personId, Guid recordId, Uri uri, HttpMethod requestMethod, string apiVersion)
+        private static async Task<string> ExecuteRestRequest(Guid personId, Guid recordId, Uri uri, HttpMethod requestMethod, string apiVersion, string requestBody = null)
         {
             // Create HTTP transport objects
             var httpRequest = new HttpRequestMessage
             {
                 Method = requestMethod,
-                RequestUri = uri,
+                RequestUri = uri
             };
             httpRequest.Headers.Add("x-ms-version", apiVersion);
+
+            // Set up the request body if it has been specified
+            if (!string.IsNullOrWhiteSpace(requestBody))
+            {
+                httpRequest.Content = new StringContent(requestBody);
+                httpRequest.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            }
 
             var connection = await GetConnectionAsync(personId);
             await connection.AuthorizeRestRequestAsync(httpRequest, recordId);
@@ -193,6 +257,11 @@ namespace HealthVaultProviderManagementPortal.Controllers
             settings.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
 
             return settings;
+        }
+
+        private static JsonSerializerSettings GetSerializationSettings()
+        {
+            return new JsonSerializerSettings().ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
         }
     }
 }
