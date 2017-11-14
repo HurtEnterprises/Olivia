@@ -10,9 +10,11 @@ using Microsoft.Extensions.Logging;
 
 namespace OliviaWebsite
 {
-    public class Login
+    /*public class Login
     {
-        public static void Main(string[] args)
+
+    }*/
+        /*public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
@@ -23,6 +25,5 @@ namespace OliviaWebsite
                 .Build();
 
             host.Run();
-        }
-    }
+        }*/
 }

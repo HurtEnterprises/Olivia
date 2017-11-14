@@ -5,3 +5,6 @@ C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp1.1\Oli
 C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp1.1\OliviaWebsite.csprojResolveAssemblyReference.cache
 C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp1.1\OliviaWebsite.csproj.CoreCompileInputs.cache
 C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp1.1\OliviaWebsite.AssemblyInfo.cs
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp1.1\OliviaWebsite.pdb
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp1.1\OliviaWebsite.dll
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp1.1\OliviaWebsite.pdb
