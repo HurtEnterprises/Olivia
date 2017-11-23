@@ -19,4 +19,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Login\EmptyClass.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Login\LoginBody.cshtml" />
+  </ItemGroup>
 </Project>
