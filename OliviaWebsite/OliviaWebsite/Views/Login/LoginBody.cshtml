@@ -2,6 +2,40 @@
     ViewData["Title"] = "LoginController";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testing Razor Syntax</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font-family: Verdana;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
 
-<p>Hello from our View Template!</p>
+        div {
+            border: 1px solid black;
+            width: 50%;
+            margin: 1.2em;
+            padding: 1em;
+        }
+
+        span.bright {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testing Razor Syntax</h1>
+    <form method="post">
+
+        <form action="action_page.php">
+            Username: <input type="text" value="Mickey"><br>
+            Password: <input type="text" name="lastname" value="Mouse"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </form>
+</body>
+</html>
