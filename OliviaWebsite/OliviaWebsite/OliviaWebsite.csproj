@@ -24,6 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Login\LoginBody.cshtml" />
+    <Content Remove="Views\Login\LoginController.cshtml" />
   </ItemGroup>
 </Project>
