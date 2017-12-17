@@ -30,4 +30,25 @@
   <ItemGroup>
     <Folder Include="Images\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\green10-u1678-fr.png" />
+    <None Include="wwwroot\images\green11-u1240-fr.png" />
+    <None Include="wwwroot\images\green12-u1673-fr.png" />
+    <None Include="wwwroot\images\green2-u1369-fr.png" />
+    <None Include="wwwroot\images\green2-u2529-fr.png" />
+    <None Include="wwwroot\images\green3.jpg" />
+    <None Include="wwwroot\images\green4-u1326-fr.png" />
+    <None Include="wwwroot\images\green5-crop-u2206.jpg" />
+    <None Include="wwwroot\images\green5.jpg" />
+    <None Include="wwwroot\images\green9-crop-u163.jpg" />
+    <None Include="wwwroot\images\green9-crop-u2204.jpg" />
+    <None Include="wwwroot\images\green9-crop-u438.jpg" />
+    <None Include="wwwroot\images\green9-crop-u656.jpg" />
+    <None Include="wwwroot\images\green9-crop-u730.jpg" />
+    <None Include="wwwroot\images\green9-u1592-fr.png" />
+    <None Include="wwwroot\images\olivia green.png" />
+    <None Include="wwwroot\images\olivia white.png" />
+    <None Include="wwwroot\images\olivia white110x94.png" />
+  </ItemGroup>
 </Project>
