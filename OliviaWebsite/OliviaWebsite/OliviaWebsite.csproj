@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\LoginStyleSheet.css" />
     <None Include="wwwroot\images\green10-u1678-fr.png" />
     <None Include="wwwroot\images\green11-u1240-fr.png" />
     <None Include="wwwroot\images\green12-u1673-fr.png" />

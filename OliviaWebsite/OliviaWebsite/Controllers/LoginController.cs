@@ -11,14 +11,25 @@ namespace OliviaWebsite.Controllers
     public class LoginController : Controller
     {
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult LoginBody()
         {
             return View();
         }
 
-        public string Welcome()
+        public class LoginModel
         {
-            return "This is the Welcome action method...";
+            public string Email { get; set;}
+            public string Password { get; set; }
+        }
+
+        [HttpPost]
+        public IActionResult LoginBody(LoginModel info)
+        {
+            System.Diagnostics.Debug.WriteLine(info.Email);
+            System.Diagnostics.Debug.WriteLine(info.Password);
+
+            return View();
         }
 
     }
