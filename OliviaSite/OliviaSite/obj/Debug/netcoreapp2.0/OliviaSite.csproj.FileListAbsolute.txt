@@ -1,0 +1,12 @@
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\bin\Debug\netcoreapp2.0\OliviaSite.deps.json
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\bin\Debug\netcoreapp2.0\OliviaSite.runtimeconfig.json
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\bin\Debug\netcoreapp2.0\OliviaSite.runtimeconfig.dev.json
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\bin\Debug\netcoreapp2.0\OliviaSite.dll
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\bin\Debug\netcoreapp2.0\OliviaSite.pdb
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.csprojResolveAssemblyReference.cache
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.csproj.CoreCompileInputs.cache
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.AssemblyInfoInputs.cache
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.AssemblyInfo.cs
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.dll
+C:\Users\Deven\CS\Olivia\OliviaSite\OliviaSite\obj\Debug\netcoreapp2.0\OliviaSite.pdb

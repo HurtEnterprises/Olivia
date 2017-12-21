@@ -1,0 +1,10 @@
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp2.0\OliviaWebsite.deps.json
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp2.0\OliviaWebsite.runtimeconfig.json
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp2.0\OliviaWebsite.runtimeconfig.dev.json
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp2.0\OliviaWebsite.dll
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\bin\Debug\netcoreapp2.0\OliviaWebsite.pdb
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp2.0\OliviaWebsite.csproj.CoreCompileInputs.cache
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp2.0\OliviaWebsite.AssemblyInfoInputs.cache
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp2.0\OliviaWebsite.AssemblyInfo.cs
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp2.0\OliviaWebsite.dll
+C:\Users\Deven\CS\Olivia\OliviaWebsite\OliviaWebsite\obj\Debug\netcoreapp2.0\OliviaWebsite.pdb
