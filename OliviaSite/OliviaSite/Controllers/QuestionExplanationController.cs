@@ -11,6 +11,7 @@ namespace OliviaSite.Controllers
     public class QuestionExplanationController : Controller
     {
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult QuestionExplanation()
         {
             return View();

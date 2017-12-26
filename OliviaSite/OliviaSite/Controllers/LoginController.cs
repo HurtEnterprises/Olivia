@@ -29,7 +29,10 @@ namespace OliviaSite.Controllers
             System.Diagnostics.Debug.WriteLine(info.Email);
             System.Diagnostics.Debug.WriteLine(info.Password);
 
-            return View();
+            //Some login Verification Logic
+
+            //return View("../QuestionExplanation/QuestionExplanation");
+            return RedirectToAction();
         }
 
     }
