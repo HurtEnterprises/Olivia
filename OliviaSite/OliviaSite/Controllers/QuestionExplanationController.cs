@@ -12,7 +12,7 @@ namespace OliviaSite.Controllers
     {
         // GET: /<controller>/
         [HttpGet]
-        public IActionResult QuestionExplanation()
+        public IActionResult ShowView()
         {
             return View();
         }

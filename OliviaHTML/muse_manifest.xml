@@ -1,0 +1,80 @@
+<manifest alg="2" build="2018.0.0.379" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="olivia.com" resolutions="1x" timestamp="1512015185073">
+  <folder name="css">
+    <file name="site_global.css" crc="223211964"/>
+    <file name="index.css" crc="504866529" ref="index"/>
+    <file name="question-template.css" crc="3960302999" ref="question-template"/>
+    <file name="log-in.css" crc="4016683847" ref="log-in"/>
+    <file name="help.css" crc="4276617346" ref="help"/>
+    <file name="finish.css" crc="168693698" ref="finish"/>
+    <file name="main-profile.css" crc="488443491" ref="main-profile"/>
+    <file name="question-explanation.css" crc="312440646" ref="question-explanation"/>
+    <file name="intro-account.css" crc="49318851" ref="intro-account"/>
+    <file name="account-set-up.css" crc="288613994" ref="account-set-up"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="museutils.js" crc="3803043152" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="whatinput.js" crc="86476730" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="museconfig.js" crc="4153641093" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="jquery.watch.js" crc="99325471" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="require.js" crc="4157109226" ref="index:help:intro-account:account-set-up:log-in:question-explanation:question-template:main-profile:finish"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4148998990" ref="question-explanation:question-template:main-profile"/>
+  </folder>
+  <folder name="images">
+    <file name="green9-crop-u163.jpg" crc="3814443576" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="olivia white.png" crc="4062541449" seo="true" ref="index:finish">
+      <caption webpage="index" alt=""/>
+      <caption webpage="finish" alt=""/>
+    </file>
+    <file name="olivia white110x94.png" crc="395428233" seo="true" ref="index:finish:account-set-up">
+      <caption webpage="index" alt=""/>
+      <caption webpage="intro-account" alt=""/>
+      <caption webpage="finish" alt=""/>
+      <caption webpage="account-set-up" alt=""/>
+    </file>
+    <file name="green5.jpg" crc="3909088694" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="green3.jpg" crc="4145331117" seo="true" ref="help">
+      <caption webpage="help" alt=""/>
+    </file>
+    <file name="green9-crop-u438.jpg" crc="200722682" seo="true" ref="intro-account">
+      <caption webpage="intro-account" alt=""/>
+    </file>
+    <file name="green9-crop-u656.jpg" crc="200722682" seo="true" ref="account-set-up">
+      <caption webpage="account-set-up" alt=""/>
+    </file>
+    <file name="green9-crop-u730.jpg" crc="200722682" seo="true" ref="log-in">
+      <caption webpage="log-in" alt=""/>
+    </file>
+    <file name="green11-u1240-fr.png" crc="4240883419" ref="question-explanation"/>
+    <file name="green4-u1326-fr.png" crc="4270351377" ref="question-explanation"/>
+    <file name="green2-u1369-fr.png" crc="3973405597" ref="question-explanation"/>
+    <file name="olivia green.png" crc="172928817" seo="true" ref="question-explanation:question-template:main-profile">
+      <caption webpage="main-profile" alt=""/>
+      <caption webpage="question-explanation" alt=""/>
+      <caption webpage="question-template" alt=""/>
+    </file>
+    <file name="green9-u1592-fr.png" crc="4015770532" ref="question-template"/>
+    <file name="green10-u1678-fr.png" crc="3930803651" ref="main-profile"/>
+    <file name="green12-u1673-fr.png" crc="4192875191" ref="main-profile"/>
+    <file name="green9-crop-u2204.jpg" crc="3814443576" seo="true" ref="finish">
+      <caption webpage="finish" alt=""/>
+    </file>
+    <file name="green2-u2529-fr.png" crc="235748580" ref="finish"/>
+    <file name="green5-crop-u2206.jpg" crc="3777187113" seo="true" ref="finish">
+      <caption webpage="finish" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="4010505181" seo="true" mt="1512014788613" redirect="true"/>
+  <file name="help.html" crc="441843986" seo="true" mt="1512015168716" redirect="true"/>
+  <file name="intro-account.html" crc="4168287558" seo="true" mt="1512014848093" redirect="true"/>
+  <file name="account-set-up.html" crc="4077097639" seo="true" mt="1512014574711" redirect="true"/>
+  <file name="log-in.html" crc="9431627" seo="true" mt="1512014827348" redirect="true"/>
+  <file name="question-explanation.html" crc="3811927647" seo="true" mt="1512009854000" redirect="true"/>
+  <file name="question-template.html" crc="486893072" seo="true" mt="1512015136798" redirect="true"/>
+  <file name="main-profile.html" crc="4169175549" seo="true" mt="1511954881945" redirect="true"/>
+  <file name="finish.html" crc="363068829" seo="true" mt="1512013140983" redirect="true"/>
+</manifest>
