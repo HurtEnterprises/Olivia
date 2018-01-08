@@ -32,7 +32,8 @@ namespace OliviaSite.Controllers
             //Some login Verification Logic
 
             //return View("~\\Views\\QuestionExplanation\\QuestionExplanation");
-            return RedirectToAction("ShowView", "QuestionExplanationController");
+            return RedirectToAction("ShowView", "QuestionExplanation");
+            //return View("~/Views/QuestionExplanation/QuestionExplanation.cshtml");
         }
 
     }

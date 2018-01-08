@@ -14,7 +14,7 @@ namespace OliviaSite.Controllers
         [HttpGet]
         public IActionResult ShowView()
         {
-            return View();
+            return View("QuestionExplanation");
         }
     }
 }
