@@ -1,0 +1,72 @@
+<manifest alg="2" build="2018.0.0.379" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="olivia.doctorportal.com" resolutions="1x" timestamp="1515466940506">
+  <folder name="css">
+    <file name="site_global.css" crc="223211964"/>
+    <file name="hra-full-report.css" crc="4162949814" ref="hra-full-report"/>
+    <file name="main-profile.css" crc="203967102" ref="main-profile"/>
+    <file name="log-in.css" crc="3900742753" ref="log-in"/>
+    <file name="index.css" crc="10545106" ref="index"/>
+    <file name="my-patients.css" crc="127734857" ref="my-patients"/>
+    <file name="create-plan.css" crc="240889106" ref="create-plan"/>
+    <file name="account-set-up.css" crc="153351192" ref="account-set-up"/>
+    <file name="help.css" crc="3875781683" ref="help"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="museutils.js" crc="3803043152" ref="index:help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="whatinput.js" crc="86476730" ref="index:help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="museconfig.js" crc="4153641093" ref="index:help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4148998990" ref="index:main-profile"/>
+    <file name="require.js" crc="4157109226" ref="index:help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="webpro.js" crc="242022427" ref="help:account-set-up:log-in"/>
+    <file name="form_check.php" crc="147359589" ref="help"/>
+    <file name="form_throttle.php" crc="93986428" ref="help"/>
+    <file name="form_process.php" crc="3851993751" ref="help"/>
+    <file name="form-u4697.php" crc="103829467" ref="help"/>
+    <file name="jquery.watch.js" crc="99325471" ref="help:account-set-up:log-in:hra-full-report:main-profile:create-plan:my-patients"/>
+    <file name="form-u3954.php" crc="3987378588" ref="account-set-up"/>
+    <file name="form-u4210.php" crc="418475615" ref="log-in"/>
+  </folder>
+  <folder name="images">
+    <file name="green9-crop-u163.jpg" crc="3787223875" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="olivia white.png" crc="4062541449" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="green2-u4887-fr.png" crc="372294567" ref="index"/>
+    <file name="olivia white110x94.png" crc="395428233" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="green3.jpg" crc="75864754" seo="true" ref="help">
+      <caption webpage="help" alt=""/>
+    </file>
+    <file name="green9-crop-u438.jpg" crc="490465953" seo="true" ref="account-set-up">
+      <caption webpage="account-set-up" alt=""/>
+    </file>
+    <file name="green9-crop-u730.jpg" crc="4207854368" seo="true" ref="log-in">
+      <caption webpage="log-in" alt=""/>
+    </file>
+    <file name="olivia green.png" crc="172928817" seo="true" ref="hra-full-report:my-patients">
+      <caption webpage="my-patients" alt=""/>
+      <caption webpage="hra-full-report" alt=""/>
+    </file>
+    <file name="green11-u5029-fr.png" crc="394884440" ref="main-profile"/>
+    <file name="green5-crop-u2206.jpg" crc="4080696101" seo="true" ref="main-profile">
+      <caption webpage="main-profile" alt=""/>
+    </file>
+    <file name="green11-u1240-fr.png" crc="4240883419" seo="true" ref="create-plan">
+      <caption webpage="create-plan" alt=""/>
+    </file>
+    <file name="olivia white2.png" crc="395428233" seo="true" ref="create-plan">
+      <caption webpage="create-plan" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="361138103" seo="true" mt="1515466849497" redirect="true"/>
+  <file name="help.html" crc="182159041" seo="true" mt="1515466719982" redirect="true"/>
+  <file name="account-set-up.html" crc="3808554889" seo="true" mt="1515422924791" redirect="true"/>
+  <file name="log-in.html" crc="3817017663" seo="true" mt="1515466257347" redirect="true"/>
+  <file name="hra-full-report.html" crc="3972919010" seo="true" mt="1515463557814" redirect="true"/>
+  <file name="main-profile.html" crc="3880698015" seo="true" mt="1515466849047" redirect="true"/>
+  <file name="create-plan.html" crc="4171335658" seo="true" mt="1515466811910" redirect="true"/>
+  <file name="my-patients.html" crc="3902515774" seo="true" mt="1515466235925" redirect="true"/>
+</manifest>
