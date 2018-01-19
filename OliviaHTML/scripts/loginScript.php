@@ -42,13 +42,12 @@
 			while ($row = mysqli_fetch_assoc($res)) {
 			var_dump($row);
 			}*/
-			//$loginname = mysqli_real_escape_string($loginname);
-			//$loginpassword = mysqli_real_escape_string($loginpassword);
-			//echo($loginname);
-			//echo($loginpassword);
-			$result = mysqli_query($conn,'SELECT name FROM logins where name=' . $loginname . ' and password=' . $loginpassword);
-			echo($result);
-			if(!$result || mysql_num_rows($result) <= 0)
+			$loginname = mysqli_real_escape_string($conn,$loginname);
+			$loginpassword = mysqli_real_escape_string($conn,$loginpassword);
+			echo($loginname);
+			echo($loginpassword);
+			$result = mysqli_query($conn,"SELECT * FROM logins where name='$loginname' and password='$loginpassword'")or die(mysql_error());
+			if(!$result || mysqli_num_rows($result) <= 0)
 			{
 				echo("invalid user");
 			}
@@ -57,7 +56,7 @@
 				echo("successful login");
 				session_start();
 				$_SESSION["user"] = $loginname;
-				//header("Location: ../question-explanation.html");
+				header("Location: ../question-explanation.html");
 			}
 
 			//Close the connection
