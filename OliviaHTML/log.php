@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="nojs html css_verticalspacer" lang="en-US">
  <head>
 
@@ -10,70 +10,65 @@
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
 
 // Check that all required assets are uploaded and up-to-date
-if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "require.js", "webpro.js", "jquery.watch.js", "intro-account.css"], "outOfDate":[]};
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "require.js", "webpro.js", "jquery.watch.js", "log-in.css"], "outOfDate":[]};
 </script>
   
-  <title>Intro Account</title>
+  <title>Log In</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=223211964"/>
-  <link rel="stylesheet" type="text/css" href="css/intro-account.css?crc=4162677630" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/log-in.css?crc=478198703" id="pagesheet"/>
    </head>
  <body>
-
   <div class="clearfix" id="page"><!-- group -->
-   <div class="clearfix grpelem" id="pu438"><!-- group -->
-    <div class="clip_frame" id="u438"><!-- image -->
-     <img class="block" id="u438_img" src="images/green9-crop-u438.jpg?crc=78108274" alt="" width="1701" height="733"/>
+   <div class="clearfix grpelem" id="pu730"><!-- group -->
+    <div class="clip_frame" id="u730"><!-- image -->
+     <img class="block" id="u730_img" src="images/green9-crop-u730.jpg?crc=54388743" alt="" width="1529" height="659"/>
     </div>
-    <a class="nonblock nontext clip_frame" id="u440" href="help.html"><!-- image --><img class="block" id="u440_img" src="images/olivia%20white110x94.png?crc=395428233" alt="" width="110" height="93"/></a>
+    <a class="nonblock nontext clip_frame" id="u723" href="help.html"><!-- image --><img class="block" id="u723_img" src="images/olivia%20white110x94.png?crc=395428233" alt="" width="110" height="93"/></a>
    </div>
-   <div class="clearfix grpelem" id="pu433-4"><!-- column -->
-    <div class="Paragraph-Style clearfix colelem" id="u433-4"><!-- content -->
+   <div class="clearfix grpelem" id="pu726-4"><!-- column -->
+    <div class="Paragraph-Style clearfix colelem" id="u726-4"><!-- content -->
      <p>WELCOME</p>
     </div>
-    <div class="colelem" id="u444"><!-- simple frame --></div>
-    <div class="clearfix colelem" id="u435-4"><!-- content -->
-     <p>We have emailed you a special 5-digit code to use as your first password. After logging in, you will be prompted to make your own&nbsp; password.</p>
+    <div class="colelem" id="u729"><!-- simple frame --></div>
+    <div class="clearfix colelem" id="u727-4"><!-- content -->
+     <p>Please log in below:</p>
     </div>
-    <div class="clearfix colelem" id="pwidgetu3954"><!-- group -->
-     <form class="form-grp clearfix grpelem" id="widgetu3954" method="post" enctype="multipart/form-data" action="scripts/form-u3954.php"><!-- none box -->
-      <div class="clearfix grpelem" id="u3965-4"><!-- content -->
+    <div class="clearfix colelem" id="pwidgetu4210"><!-- group -->
+     <form class="form-grp clearfix grpelem" id="widgetu4210" method="POST" enctype="multipart/form-data" action="scripts/loginScript.php"><!-- none box -->
+      <div class="clearfix grpelem" id="u4216-4"><!-- content -->
        <p>Submitting Form...</p>
       </div>
-      <div class="clearfix grpelem" id="u3963-4"><!-- content -->
+      <div class="clearfix grpelem" id="u4211-4"><!-- content -->
        <p>The server encountered an error.</p>
       </div>
-      <div class="clearfix grpelem" id="u3964-4"><!-- content -->
+      <div class="clearfix grpelem" id="u4229-4"><!-- content -->
        <p>Form received.</p>
       </div>
-      <button class="submit-btn NoWrap rounded-corners clearfix grpelem" id="u3970-4" type="submit" value="SUBMIT" tabindex="4"><!-- content -->
+      <button class="submit-btn NoWrap rounded-corners clearfix grpelem" id="u4230-4" type="submit" value="SUBMIT" tabindex="3"><!-- content -->
        <div style="margin-top:-18px;height:18px;">
         <p>SUBMIT</p>
        </div>
       </button>
-      <div class="fld-grp clearfix grpelem" id="widgetu3971" data-required="true"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix grpelem" id="u3972-4" for="widgetu3971_input"><!-- content --><span class="actAsPara">Legal First Name:</span></label>
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u3974-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu3971_input" name="custom_U3971" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu3971_prompt" for="widgetu3971_input"><span class="actAsPara">Please Enter Your First Name</span></label></span>
+      <div class="fld-grp clearfix grpelem" id="widgetu4217" data-required="true"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix grpelem" id="u4218-4" for="widgetu4217_input"><!-- content --><span class="actAsPara">Email:</span></label>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4220-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu4217_input" name="email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu4217_prompt" for="widgetu4217_input"><span class="actAsPara">Please Enter Your Email</span></label></span>
       </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu3959" data-required="true"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix grpelem" id="u3961-4" for="widgetu3959_input"><!-- content --><span class="actAsPara">Legal Last Name:</span></label>
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u3962-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu3959_input" name="custom_U3959" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu3959_prompt" for="widgetu3959_input"><span class="actAsPara">Please Enter Your Last Name</span></label></span>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu3955" data-required="true"><!-- none box -->
-       <label class="fld-label actAsDiv clearfix grpelem" id="u3957-4" for="widgetu3955_input"><!-- content --><span class="actAsPara">Five-Digit Code:</span></label>
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u3958-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu3955_input" name="custom_U3955" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu3955_prompt" for="widgetu3955_input"><span class="actAsPara">Please Enter Your Unique 5-Digit Code</span></label></span>
+      <div class="fld-grp clearfix grpelem" id="widgetu4221" data-required="true"><!-- none box -->
+       <label class="fld-label actAsDiv clearfix grpelem" id="u4224-4" for="widgetu4221_input"><!-- content --><span class="actAsPara">Password:</span></label>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4222-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu4221_input" name="password" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu4221_prompt" for="widgetu4221_input"><span class="actAsPara">Please Enter Your Password</span></label></span>
       </div>
      </form>
-     <a class="nonblock nontext rounded-corners grpelem" id="u4529" href="account-set-up.html"><!-- simple frame --></a>
+     <a class="nonblock nontext rounded-corners grpelem" id="u4536" href=""><!-- simple frame --></a>
     </div>
-    <div class="clearfix colelem" id="u642-4"><!-- content -->
-     <p><span id="u642">please click here if you have trouble finding your code</span></p>
+    <div class="clearfix colelem" id="u728-4"><!-- content -->
+     <p><span id="u728">please click here if you have trouble logging in</span></p>
     </div>
-    <div class="clearfix colelem" id="u436-4"><!-- content -->
+    <div class="clearfix colelem" id="u725-4"><!-- content -->
      <p>by Hurt Technologies, Inc.</p>
     </div>
    </div>
-   <div class="verticalspacer" data-offset-top="581" data-content-above-spacer="659" data-content-below-spacer="7"></div>
+   <div class="verticalspacer" data-offset-top="536" data-content-above-spacer="585" data-content-below-spacer="30"></div>
   </div>
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -91,7 +86,7 @@ window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
-Muse.Utils.initWidget('#widgetu3954', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu3954 */
+Muse.Utils.initWidget('#widgetu4210', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu4210 */
 Muse.Utils.fullPage('#page');/* 100% height page */
 Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
