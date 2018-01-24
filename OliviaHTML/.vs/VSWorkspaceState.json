@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\scripts"
+    "\\scripts",
+    "\\vendor"
   ],
-  "SelectedNode": "\\scripts\\loginScript.php",
+  "SelectedNode": "\\generalquestions.html",
   "PreviewInSolutionExplorer": false
 }

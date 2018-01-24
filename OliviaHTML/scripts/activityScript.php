@@ -60,7 +60,7 @@
 				// Close the connection
 				mysqli_close($conn);
 
-				header("Location: ../generalquestions.html");
+				header("Location: ../nutritionquestions.html");
 			}
 			else
 			{
@@ -76,7 +76,7 @@
 					//Close the connection
 					mysqli_stmt_close($stmt);
 
-					//header("Location: ../generalquestions.html");
+					//header("Location: ../nutritionquestions.html");
 			}
 
 			//Close the connection
