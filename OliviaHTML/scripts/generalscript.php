@@ -49,7 +49,6 @@
 					//printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 					mysqli_stmt_close($stmt);
 				}
-
 				// Close the connection
 				mysqli_close($conn);
 
@@ -59,22 +58,20 @@
 			{
 				//update
 				//Run the Update statement
-				$new_product_price = 15.1;
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question11 = ?, question12 = ?, question13 = ?, question14 = ?, question15 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest11, $quest12,$quest13,$quest14,$quest15,$_SESSION["loginTime"], $_SESSION["user"]);
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question11 = ?, question12 = ?, question13 = ?, question14 = ?, question15 = ? WHERE date = ? and patientUsername = ?")) {
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest11, $quest12,$quest13,$quest14,$quest15,$_SESSION["loginTime"], $_SESSION["user"]);
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-
-				}
+					
 					//Close the connection
 					mysqli_stmt_close($stmt);
+				}
 
-					header("Location: ../safetyquestions.html");
+				header("Location: ../safetyquestions.html");
 			}
 
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
 
 ?>

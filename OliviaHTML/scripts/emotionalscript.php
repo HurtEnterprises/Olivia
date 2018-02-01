@@ -57,24 +57,20 @@
 			}
 			else
 			{
-				//update
 				//Run the Update statement
-				$new_product_price = 15.1;
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question26 = ?, question27 = ?, question28 = ?, question29 = ?, question30 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest26, $quest27,$quest28,$quest29,$quest30,$_SESSION["loginTime"], $_SESSION["user"]);
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question26 = ?, question27 = ?, question28 = ?, question29 = ?, question30 = ? WHERE date = ? and patientUsername = ?")) {
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest26, $quest27,$quest28,$quest29,$quest30,$_SESSION["loginTime"], $_SESSION["user"]);
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 
-				}
 					//Close the connection
 					mysqli_stmt_close($stmt);
+				}
 
-					header("Location: ../mentalquestions.html");
+				header("Location: ../mentalquestions.html");
 			}
 
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
-
 ?>

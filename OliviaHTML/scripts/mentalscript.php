@@ -25,7 +25,7 @@
 			$password = "LongLiveMedKit!";
 			$db_name = "patient";
 			$conn = mysqli_init();
-			mysqli_real_connect($conn, $host, $username, $password, $db_name, 3356);
+			mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
 			if (mysqli_connect_errno($conn)) {
 			die('Failed to connect to MySQL: '.mysqli_connect_error());
 			}
@@ -59,22 +59,20 @@
 			{
 				//update
 				//Run the Update statement
-				$new_product_price = 15.1;
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question31 = ?, question32 = ?, question33 = ?, question34 = ?, question35 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest31, $quest32,$quest33,$quest34,$quest35,$_SESSION["loginTime"], $_SESSION["user"]);
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question31 = ?, question32 = ?, question33 = ?, question34 = ?, question35 = ? WHERE date = ? and patientUsername = ?")) {
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest31, $quest32,$quest33,$quest34,$quest35,$_SESSION["loginTime"], $_SESSION["user"]);
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-
-				}
+				
 					//Close the connection
 					mysqli_stmt_close($stmt);
+				}
 
-					header("Location: ../identityquestions.html");
+				header("Location: ../identityquestions.html");
 			}
 
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
 
 ?>

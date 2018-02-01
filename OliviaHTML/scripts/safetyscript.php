@@ -59,22 +59,21 @@
 			{
 				//update
 				//Run the Update statement
-				$new_product_price = 15.1;
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question16 = ?, question17 = ?, question18 = ?, question19 = ?, question20 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest16, $quest17,$quest18,$quest19,$quest20,$_SESSION["loginTime"], $_SESSION["user"]);
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question16 = ?, question17 = ?, question18 = ?, question19 = ?, question20 = ? WHERE date = ? and patientUsername = ?")) {
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest16, $quest17,$quest18,$quest19,$quest20,$_SESSION["loginTime"], $_SESSION["user"]);
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 
-				}
 					//Close the connection
 					mysqli_stmt_close($stmt);
+				}
 
-					header("Location: ../socialquestions.html");
+
+				header("Location: ../socialquestions.html");
 			}
 
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
 
 ?>

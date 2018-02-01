@@ -44,7 +44,7 @@
 
 				//Create an Insert prepared statement and run it
 				if ($stmt = mysqli_prepare($conn, "INSERT INTO patientHRA (id, date, patientUsername,question6,question7,question8,question9,question10) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
-					mysqli_stmt_bind_param($stmt, 'sssiiiii', $recordID, $_SESSION["loginTime"], $_SESSION["user"],$quest6,$quest7,$quest8,$quest9,$quest10
+					mysqli_stmt_bind_param($stmt, 'sssiiiii', $recordID, $_SESSION["loginTime"], $_SESSION["user"],$quest6,$quest7,$quest8,$quest9,$quest10);
 					mysqli_stmt_execute($stmt);
 					//printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 					mysqli_stmt_close($stmt);
@@ -59,22 +59,22 @@
 			{
 				//update
 				//Run the Update statement
-				$new_product_price = 15.1;
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question6 = ?, question7 = ?, question8 = ?, question9 = ?, question10 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest6, $quest7,$quest8,$quest9,$quest10,$_SESSION["loginTime"], $_SESSION["user"]);
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question6 = ?, question7 = ?, question8 = ?, question9 = ?, question10 = ? WHERE date = ? and patientUsername = ?")) {
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest6, $quest7,$quest8,$quest9,$quest10,$_SESSION["loginTime"], $_SESSION["user"]);
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 
-				}
 					//Close the connection
 					mysqli_stmt_close($stmt);
 
-					header("Location: ../generalquestions.html");
+				}
+
+
+				header("Location: ../generalquestions.html");
 			}
 
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
 
 ?>

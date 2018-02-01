@@ -68,13 +68,15 @@
 				//Run the Update statement
 				$new_product_price = 15.1;
 				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question1 = ?, question2 = ?, question3 = ?, question4 = ?, question5 = ?, WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'ds', $quest1, $quest2,$quest3,$quest4,$quest5,$_SESSION["loginTime"], $_SESSION["user"]);
+					if($stmt === FALSE){ die(mysqli_error($db_conx)); }
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest1, $quest2,$quest3,$quest4,$quest5,$_SESSION["loginTime"], $_SESSION["user"]);
+					if($stmt === FALSE){ die(mysqli_error($db_conx)); }
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 
 				}
 					//Close the connection
-					mysqli_stmt_close($stmt);
+				mysqli_stmt_close($stmt);
 
 					//header("Location: ../nutritionquestions.html");
 			}
@@ -82,6 +84,5 @@
 			//Close the connection
 			mysqli_close($conn); 
 		}
-	}
 
 ?>

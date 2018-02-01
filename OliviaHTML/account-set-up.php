@@ -57,14 +57,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu4147" data-required="true"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u4150-4" for="widgetu4147_input"><!-- content --><span class="actAsPara">Password:</span></label>
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4148-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu4147_input" name="password" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu4147_prompt" for="widgetu4147_input"><span class="actAsPara"></span>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4148-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu4147_input" name="password" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu4147_prompt" for="widgetu4147_input"><span class="actAsPara"></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu4155" data-required="true"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u4158-4" for="widgetu4155_input"><!-- content --><span class="actAsPara">Confirm Password:</span></label>
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4156-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu4155_input" name="confirmpassword" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu4155_prompt" for="widgetu4155_input"></label></span>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4156-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu4155_input" name="confirmpassword" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu4155_prompt" for="widgetu4155_input"></label></span>
       </div>
      </form>
-     <a class="nonblock nontext grpelem" id="u4515"><!-- simple frame --></a>
     </div>
     <div class="clearfix colelem" id="u654-4"><!-- content -->
      <p>With this password, you will be able to access your profile at any time!</p>
