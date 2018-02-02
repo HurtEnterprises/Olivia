@@ -46,12 +46,13 @@
 			$loginpassword = mysqli_real_escape_string($conn,$loginpassword);
 			echo($loginname);
 			echo($loginpassword);
+            $passwordhashed = password_hash($loginpassword, PASSWORD_BCRYPT);
 			$result = mysqli_query($conn,"SELECT * FROM logins where name='$loginname' and password='$loginpassword'")or die(mysql_error());
 			if(!$result || mysqli_num_rows($result) <= 0)
 			{
 				echo("invalid user");
 			}
-			else
+			else if(password_verify(password,$hashed_password))
 			{
 				echo("successful login");
 				session_start();

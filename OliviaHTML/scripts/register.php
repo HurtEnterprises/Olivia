@@ -13,6 +13,7 @@
         header("Location: ../account-set-up.php");die();
         
     }
+
     elseif ($_SERVER["REQUEST_METHOD"] == "POST")  //switch to post
     {
         //header("Location: ../question-explanation.html");die();
@@ -25,6 +26,7 @@
             $loginname = trim($_POST["email"]);
             $loginpassword = trim($_POST["password"]);
             $loginconfirmpassword = trim($_POST["confirmpassword"]);
+            
             //Verify login input
             //Establishes the connection
             $host = "olivialogs.mysql.database.azure.com";
@@ -54,7 +56,8 @@
             }
             else
             {
-                mysqli_query($conn,"INSERT INTO logins (name,password) VALUES ('$loginname','$loginpassword')");
+                $passwordhashed = password_hash($loginpassword, PASSWORD_BCRYPT);
+                mysqli_query($conn,"INSERT INTO logins (name,password) VALUES ('$loginname','$passwordhashed')");
                 session_start();
                 $_SESSION["user"] = $loginname;
                 header("Location: ../question-explanation.html");
