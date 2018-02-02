@@ -59,7 +59,6 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u4222-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu4221_input" placeholder="Please Enter Your Password" name="password" tabindex="2"/></span>
       </div>
      </form>
-     <a class="nonblock nontext rounded-corners grpelem" id="u4536" href=""><!-- simple frame --></a>
     </div>
     <div class="clearfix colelem" id="u728-4"><!-- content -->
      <p><span id="u728">please click here if you have trouble logging in</span></p>

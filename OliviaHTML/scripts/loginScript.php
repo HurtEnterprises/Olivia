@@ -7,13 +7,13 @@
 	//require('../vendor/autoload.php');
 	//use WindowsAzure\Common\ServicesBuilder;
 
-	if ($_SERVER["REQUEST_METHOD"] == "GET") //Switch to get
+	if ($_SERVER["REQUEST_METHOD"] == "GET") 
     {
         // else render form
 		header("Location: ../log-in.php");die();
 
     }  
-	elseif ($_SERVER["REQUEST_METHOD"] == "POST")  //switch to post
+	elseif ($_SERVER["REQUEST_METHOD"] == "POST") 
 	{
 		//header("Location: ../question-explanation.html");die();
 		if (empty($_POST["email"]) or empty($_POST["password"]))
@@ -36,12 +36,6 @@
 			die('Failed to connect to MySQL: '.mysqli_connect_error());
 			}
 
-			//Run the Select query
-			/*printf("Reading data from table: \n");
-			$res = mysqli_query($conn, 'SELECT * FROM logins');
-			while ($row = mysqli_fetch_assoc($res)) {
-			var_dump($row);
-			}*/
 			$loginname = mysqli_real_escape_string($conn,$loginname);
 			$loginpassword = mysqli_real_escape_string($conn,$loginpassword);
 			echo($loginname);
@@ -57,6 +51,7 @@
 				echo("successful login");
 				session_start();
 				$_SESSION["user"] = $loginname;
+				$_SESSION["loginTime"] = date('Y-m-d H:i:s');
 				header("Location: ../question-explanation.html");
 			}
 

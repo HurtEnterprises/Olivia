@@ -12,11 +12,11 @@
     } 
 	elseif ($_SERVER["REQUEST_METHOD"] == "POST") 
 	{
-			$quest21 = trim($_POST["Q21"]);
-			$quest22 = trim($_POST["Q22"]);
-			$quest23 = trim($_POST["Q23"]);
-			$quest24 = trim($_POST["Q24"]);
-			$quest25 = trim($_POST["Q25"]);
+			$quest1 = trim($_POST["Q1"]);
+			$quest2 = trim($_POST["Q2"]);
+			$quest3 = trim($_POST["Q3"]);
+			$quest4 = trim($_POST["Q4"]);
+			$quest5 = trim($_POST["Q5"]);
 
 			//Verify login input
 			//Establishes the connection
@@ -30,11 +30,18 @@
 			die('Failed to connect to MySQL: '.mysqli_connect_error());
 			}
 
-			$quest21 = mysqli_real_escape_string($conn,$quest21);
-			$quest22 = mysqli_real_escape_string($conn,$quest22);
-			$quest23 = mysqli_real_escape_string($conn,$quest23);
-			$quest24 = mysqli_real_escape_string($conn,$quest24);
-			$quest25 = mysqli_real_escape_string($conn,$quest25);
+			$quest1 = mysqli_real_escape_string($conn,$quest1);
+			$quest2 = mysqli_real_escape_string($conn,$quest2);
+			$quest3 = mysqli_real_escape_string($conn,$quest3);
+			$quest4 = mysqli_real_escape_string($conn,$quest4);
+			$quest5 = mysqli_real_escape_string($conn,$quest5);
+
+			echo($quest1);
+			echo($quest2);
+			echo($quest3);
+			echo($quest4);
+			echo($quest5);
+
 
 			$result = mysqli_query($conn,"SELECT * FROM patientHRA where date='{$_SESSION["loginTime"]}' and patientUsername='{$_SESSION["user"]}'")or die(mysql_error());
 			if(!$result || mysqli_num_rows($result) <= 0)
@@ -43,8 +50,8 @@
 				$recordID = $_SESSION["user"] . ' ' . date('Y-m-d H:i:s');
 
 				//Create an Insert prepared statement and run it
-				if ($stmt = mysqli_prepare($conn, "INSERT INTO patientHRA (id, date, patientUsername,question21,question22,question23,question24,question25) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
-					mysqli_stmt_bind_param($stmt, 'sssiiiii', $recordID, $_SESSION["loginTime"], $_SESSION["user"],$quest21,$quest22,$quest23,$quest24,$quest25);
+				if ($stmt = mysqli_prepare($conn, "INSERT INTO patientHRA (id, date, patientUsername,question1,question2,question3,question4,question5) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
+					mysqli_stmt_bind_param($stmt, 'sssiiiii', $recordID, $_SESSION["loginTime"], $_SESSION["user"],$quest1,$quest2,$quest3,$quest4,$quest5);
 					mysqli_stmt_execute($stmt);
 					//printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 					mysqli_stmt_close($stmt);
@@ -53,23 +60,25 @@
 				// Close the connection
 				mysqli_close($conn);
 
-				header("Location: ../emotionalquestions.html");
+				header("Location: ../nutritionquestions.html");
 			}
 			else
 			{
 				//update
 				//Run the Update statement
-				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question21 = ?, question22 = ?, question23 = ?, question24 = ?, question25 = ? WHERE date = ? and patientUsername = ?")) {
-					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest21, $quest22,$quest23,$quest24,$quest25,$_SESSION["loginTime"], $_SESSION["user"]);
+				$new_product_price = 15.1;
+				if ($stmt = mysqli_prepare($conn, "UPDATE patientHRA SET question1 = ?, question2 = ?, question3 = ?, question4 = ?, question5 = ?, WHERE date = ? and patientUsername = ?")) {
+					if($stmt === FALSE){ die(mysqli_error($db_conx)); }
+					mysqli_stmt_bind_param($stmt, 'iiiiiss', $quest1, $quest2,$quest3,$quest4,$quest5,$_SESSION["loginTime"], $_SESSION["user"]);
+					if($stmt === FALSE){ die(mysqli_error($db_conx)); }
 					mysqli_stmt_execute($stmt);
 					printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-					
-					//Close the connection
-					mysqli_stmt_close($stmt);
+
 				}
+					//Close the connection
+				mysqli_stmt_close($stmt);
 
-
-					header("Location: ../emotionalquestions.html");
+					//header("Location: ../nutritionquestions.html");
 			}
 
 			//Close the connection
