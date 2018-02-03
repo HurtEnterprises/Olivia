@@ -38,21 +38,25 @@
 
 			$loginname = mysqli_real_escape_string($conn,$loginname);
 			$loginpassword = mysqli_real_escape_string($conn,$loginpassword);
-			echo($loginname);
-			echo($loginpassword);
-            $passwordhashed = password_hash($loginpassword, PASSWORD_BCRYPT);
-			$result = mysqli_query($conn,"SELECT * FROM logins where name='$loginname' and password='$loginpassword'")or die(mysql_error());
+            $passwordhashed = password_hash($loginpassword, PASSWORD_DEFAULT);
+			$result = mysqli_query($conn,"SELECT * FROM logins where name='$loginname'")or die(mysql_error());
 			if(!$result || mysqli_num_rows($result) <= 0)
 			{
+				echo($passwordhashed);
 				echo("invalid user");
 			}
-			else if(password_verify(password,$hashed_password))
+			else 
 			{
-				echo("successful login");
-				session_start();
-				$_SESSION["user"] = $loginname;
-				$_SESSION["loginTime"] = date('Y-m-d H:i:s');
+				$row = mysqli_fetch_assoc($result);
+				if(password_verify($password,$row['password'])){
+					echo "Password verified";
+					session_start();
+					$_SESSION["user"] = $loginname;
+					$_SESSION["loginTime"] = date('Y-m-d H:i:s');
 				header("Location: ../question-explanation.html");
+				} else {
+					echo "Wrong password";
+				}
 			}
 
 			//Close the connection

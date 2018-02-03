@@ -6,184 +6,227 @@
     <meta name="generator" content="2018.0.0.379" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
     <title>Finish</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=223211964" />
-    <link rel="stylesheet" type="text/css" href="css/finish.css?crc=3979385226" id="pagesheet" />
-    <link rel="stylesheet" type="text/css" href="css/log-in.css?crc=478198703" id="pagesheet" />
+    <link rel="stylesheet" type="text/css" href="css/finish.css?crc=4230156719" id="pagesheet" />
 </head>
-<body>
+<script>
+    var phone = 0;
+    var email = 0;
+    var text = 0;
+    var vehicle = 0;
+    function setphone(btn) {
+        var property = document.getElementById(btn);
+        if (phone == 0){
+            phone = 1;
+            property.style.backgroundColor = "#000000";
+        } else {
+            phone = 0;
+            property.style.backgroundColor = 'transparent';
+        }
+    }
+    function setemail(btn) {
+        var property = document.getElementById(btn);
+        if (email == 0){
+            email = 1;
+            property.style.backgroundColor = "#000000";
+        } else {
+            email = 0;
+            property.style.backgroundColor = 'transparent';
+        }
+    }
+    function settext(btn) {
+        var property = document.getElementById(btn);
+        if (text == 0){
+            text = 1;
+            property.style.backgroundColor = "#000000";
+        } else {
+            text = 0;
+            property.style.backgroundColor = 'transparent';
+        }
+    }
+    function setvehicle(yesbtn,nobtn) {
+        var yes = document.getElementById(yesbtn);
+        var no = document.getElementById(nobtn);
+        if (vehicle == 0){
+            vehicle = 1;
+            yes.style.backgroundColor = "#000000";
+            no.style.backgroundColor = 'transparent';
+        } else {
+            vehicle = 0;
+            no.style.backgroundColor = "#000000";
+            yes.style.backgroundColor = 'transparent';
+        }
+    }
+    function finish() {
+        window.location.href = "scripts/finishscript.php?phone=" + phone + "&email=" + email + "&text=" + text + "&vehicle=" + vehicle;
+    }
 
-    <div class="clearfix borderbox" id="page">
-        <!-- group -->
+</script>
+    <body>
+
+        <div class="clearfix borderbox" id="page">
+            <!-- group -->
         <div class="clearfix grpelem" id="ppu2204">
-            <!-- column -->
+                <!-- column -->
             <div class="clearfix colelem" id="pu2204">
-                <!-- group -->
+                    <!-- group -->
                 <div class="clip_frame grpelem" id="u2204" data-sizePolicy="fixed" data-pintopage="page_fixedCenter">
-                    <!-- image -->
-                    <img class="block" id="u2204_img" src="images/green9-crop-u2204.jpg?crc=185521518" alt="" width="1285" height="554" />
-                </div>
-                <div class="clip_frame grpelem" id="u2219" data-sizePolicy="fixed" data-pintopage="page_fixedCenter">
-                    <!-- image -->
+                        <!-- image -->
+                    <img class="block" id="u2204_img" src="images/green9-crop-u2204.jpg?crc=21396921" alt="" width="1285" height="554" />
+                    </div>
+                    <div class="clip_frame grpelem" id="u2219" data-sizePolicy="fixed" data-pintopage="page_fixedCenter">
+                        <!-- image -->
                     <img class="block" id="u2219_img" src="images/olivia%20white.png?crc=4062541449" alt="" width="346" height="293" />
-                </div>
-                <div class="clearfix grpelem" id="u2203-9" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                    <!-- content -->
+                    </div>
+                    <div class="clearfix grpelem" id="u2203-9" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
+                        <!-- content -->
                     <p>Congratulations!</p>
-                    <p>We have analyzed your profile and successfully found qualified Medicare doctors&nbsp; in your area that fit your schedule!</p>
-                    <p>&nbsp;</p>
-                    <p>Please select your doctor and indicate transportation needs below:</p>
+                        <p>We have analyzed your profile and successfully found qualified Medicare doctors&nbsp; in your area that fit your schedule!</p>
+                        <p>&nbsp;</p>
+                        <p>Please select your doctor and indicate transportation needs below:</p>
+                    </div>
                 </div>
-            </div>
-            <div class="clearfix colelem" id="pu2214-4">
-                <!-- group -->
+                <div class="clearfix colelem" id="pu2214-4">
+                    <!-- group -->
                 <a class="nonblock nontext clearfix grpelem" id="u2214-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2214-2">STEP TWO: YOUR VISIT</p></a>
-                <div class="clearfix grpelem" id="u2200-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                    <!-- content -->
+                    <div class="clearfix grpelem" id="u2200-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
+                        <!-- content -->
                     <p>Please select the time that works best for you</p>
+                    </div>
+                    <a class="nonblock nontext clip_frame grpelem" id="u2211" href="help.html"><!-- image --><img class="block" id="u2211_img" src="images/olivia%20white110x94.png?crc=395428233" alt="" data-heightwidthratio="0.8454545454545455" data-image-width="110" data-image-height="93" /></a>
                 </div>
-                <a class="nonblock nontext clip_frame grpelem" id="u2211" href="help.html"><!-- image --><img class="block" id="u2211_img" src="images/olivia%20white110x94.png?crc=395428233" alt="" data-heightwidthratio="0.8454545454545455" data-image-width="110" data-image-height="93" /></a>
-            </div>
-            <div class="colelem" id="u2213" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-            <div class="clearfix colelem" id="pu2291-4">
-                <!-- group -->
-                <a class="nonblock nontext clearfix grpelem" id="u2291-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2291-2">MORNING</p></a>
-                <a class="nonblock nontext clearfix grpelem" id="u2294-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2294-2">AFTERNOON</p></a>
-                <a class="nonblock nontext clearfix grpelem" id="u2300-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2300-2">EVENING</p></a>
-            </div>
-            <div class="clearfix colelem" id="pu2208-10">
-                <!-- group -->
+                <div class="colelem" id="u2213" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                <div class="clearfix colelem" id="pu2291-4">
+                    <!-- group -->
+                <a class="nonblock nontext clearfix grpelem" id="u2291-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2291-2">MORNING</p></a>
+                    <a class="nonblock nontext clearfix grpelem" id="u2294-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2294-2">AFTERNOON</p></a>
+                    <a class="nonblock nontext clearfix grpelem" id="u2300-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2300-2">EVENING</p></a>
+                </div>
+                <div class="clearfix colelem" id="pu2208-10">
+                    <!-- group -->
                 <div class="clearfix grpelem" id="u2208-10" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                    <!-- content -->
+                        <!-- content -->
                     <p>This Tuesday, 9 am: Dr. Hurt</p>
-                    <p>&nbsp;</p>
-                    <p>This Thursday, 10:15 am: Dr. Hurt</p>
-                    <p>&nbsp;</p>
-                    <p>Next Friday, 11:30 am: Dr. Hurt</p>
-                </div>
-                <div class="grpelem" id="u2321" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                <div class="grpelem" id="u2327" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                <div class="grpelem" id="u2330" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                <div class="clearfix grpelem" id="u2429">
-                    <!-- group -->
+                        <p>&nbsp;</p>
+                        <p>This Thursday, 10:15 am: Dr. Hurt</p>
+                        <p>&nbsp;</p>
+                        <p>Next Friday, 11:30 am: Dr. Hurt</p>
+                    </div>
+                    <div class="grpelem" id="u2321" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                    <div class="grpelem" id="u2327" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                    <div class="grpelem" id="u2330" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                    <div class="clearfix grpelem" id="u2429">
+                        <!-- group -->
                     <div class="clearfix grpelem" id="u2399-10" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                        <!-- content -->
+                            <!-- content -->
                         <p>This Friday, 12 pm: Dr. Azad</p>
-                        <p>&nbsp;</p>
-                        <p>Next Monday, 12:45 pm: Dr. Azad</p>
-                        <p>&nbsp;</p>
-                        <p>Next Tuesday, 1 pm: Dr. Azad</p>
+                            <p>&nbsp;</p>
+                            <p>Next Monday, 12:45 pm: Dr. Azad</p>
+                            <p>&nbsp;</p>
+                            <p>Next Tuesday, 1 pm: Dr. Azad</p>
+                        </div>
+                        <div class="grpelem" id="u2400" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                        <div class="grpelem" id="u2401" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                        <div class="grpelem" id="u2402" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
                     </div>
-                    <div class="grpelem" id="u2400" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                    <div class="grpelem" id="u2401" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                    <div class="grpelem" id="u2402" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                </div>
-                <div class="clearfix grpelem" id="u2423">
-                    <!-- group -->
+                    <div class="clearfix grpelem" id="u2423">
+                        <!-- group -->
                     <div class="clearfix grpelem" id="u2411-10" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                        <!-- content -->
+                            <!-- content -->
                         <p>This Monday, 3:30 pm: Dr. Corcoran</p>
-                        <p>&nbsp;</p>
-                        <p>This Tuesday, 4:15 pm: Dr. Corcoran</p>
-                        <p>&nbsp;</p>
-                        <p>Next Thursday, 4:45 pm: Dr. Corcoran</p>
+                            <p>&nbsp;</p>
+                            <p>This Tuesday, 4:15 pm: Dr. Corcoran</p>
+                            <p>&nbsp;</p>
+                            <p>Next Thursday, 4:45 pm: Dr. Corcoran</p>
+                        </div>
+                        <div class="grpelem" id="u2412" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                        <div class="grpelem" id="u2413" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                        <div class="grpelem" id="u2414" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
                     </div>
-                    <div class="grpelem" id="u2412" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                    <div class="grpelem" id="u2413" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                    <div class="grpelem" id="u2414" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
                 </div>
-            </div>
-            <div class="clearfix colelem" id="pu2309-4">
-                <!-- group -->
-                <a class="nonblock nontext clearfix grpelem" id="u2309-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2309-2"><span id="u2309">click here to generate more options in this time slot</span></p></a>
-                <a class="nonblock nontext clearfix grpelem" id="u2315-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2315-2"><span id="u2315">click here to generate more options in this time slot</span></p></a>
-                <a class="nonblock nontext clearfix grpelem" id="u2318-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2318-2"><span id="u2318">click here to generate more options in this time slot</span></p></a>
-            </div>
-            <div class="clearfix colelem" id="pu2460-4">
-                <!-- group -->
+                <div class="clearfix colelem" id="pu2309-4">
+                    <!-- group -->
+                <a class="nonblock nontext clearfix grpelem" id="u2309-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2309-2"><span id="u2309">click here to generate more options in this time slot</span></p></a>
+                    <a class="nonblock nontext clearfix grpelem" id="u2315-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2315-2"><span id="u2315">click here to generate more options in this time slot</span></p></a>
+                    <a class="nonblock nontext clearfix grpelem" id="u2318-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2318-2"><span id="u2318">click here to generate more options in this time slot</span></p></a>
+                </div>
+                <div class="clearfix colelem" id="pu2460-4">
+                    <!-- group -->
                 <a class="nonblock nontext clearfix grpelem" id="u2460-4" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2460-2">STEP THREE: YOUR TRANSPORT</p></a>
-               <form action=" scripts/finishscript.php" method="post"> 
-                <div class="grpelem" id="u2461" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
-                <div class="clearfix grpelem" id="u2462-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                    <!-- content -->
+                    <div class="grpelem" id="u2461" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- simple frame --></div>
+                    <div class="clearfix grpelem" id="u2462-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
+                        <!-- content -->
                     <p>Please indicate below if you need transportation assistance:</p>
-                    <br />
-                </div>
-                <div class="clearfix grpelem" id="u2499">
-                    <!-- group -->
-                </div>
-                <div class="clearfix grpelem" id="u2502">
-                    <!-- group -->
-                </div>
-                <div class="clearfix grpelem" id="u2520">
-                    <!-- group -->
-                </div>
-                <div class="browser_width grpelem" id="u2529-bw">
-                    <div id="u2529">
-                        <!-- column -->
+                    </div>
+                    <div class="browser_width grpelem" id="u2529-bw">
+                        <div id="u2529">
+                            <!-- column -->
                         <div class="clearfix" id="u2529_align_to_page">
-                            <div class="clearfix colelem" id="pu2598">
-                                <!-- group -->
-                                <div class="clearfix grpelem" id="u2598">
+                                <div class="clearfix colelem" id="pu4847">
                                     <!-- group -->
+                                <div class="clearfix grpelem" id="u4847">
+                                        <!-- group -->
+                                    <div class="Button rounded-corners grpelem" id="buttonu4831" onclick="javascript:setvehicle('buttonu4831','buttonu4840')"><!-- container box --></div>
+                                        <a class="nonblock nontext clearfix grpelem" id="u2600-4" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>yes</p></a>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u4844">
+                                        <!-- group -->
+                                    <div class="Button rounded-corners grpelem" id="buttonu4840" onclick="javascript:setvehicle('buttonu4831','buttonu4840')"><!-- container box --></div>
+                                        <a class="nonblock nontext clearfix grpelem" id="u2602-4" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>no</p></a>
+                                    </div>
                                 </div>
-                                <div class="clearfix grpelem" id="u2601">
-                                    <!-- group -->
-                                </div>
-                            </div>
-                            <br /> <br /> 
-                            <div class="clearfix grpelem" id="696969">
-                                <input type="checkbox" id="checkbx" name="vehicle" value="transportation"> I need assistance<br>
-                            </div>
-                            <br /> 
-                            <div class="clearfix colelem" id="u2616-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                                <!-- content -->
+                                <div class="clearfix colelem" id="u2616-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
+                                    <!-- content -->
                                 <p>Please select your preferred mode(s) of communication through which we will follow up with more details:</p>
-                                <br />
-                                <input type="checkbox" name="phone" value="phone"> phone call<br>
-                                <input type="checkbox" name="text" value="text"> mobile text<br>
-                                <input type="checkbox" name="email" value="email"> email<br>
-
+                                </div>
+                                <div class="clearfix colelem" id="pu4880">
+                                    <!-- group -->
+                                <div class="clearfix grpelem" id="u4880">
+                                        <!-- group -->
+                                    <div class="Button rounded-corners grpelem" id="buttonu4881" onclick="javascript:setphone('buttonu4881')"><!-- container box --></div>
+                                        <a class="nonblock nontext clearfix grpelem" id="u4882-4" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>phone call</p></a>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u4862">
+                                        <!-- group -->
+                                    <div class="Button rounded-corners grpelem" id="buttonu4864" onclick="javascript:settext('buttonu4864')"><!-- container box --></div>
+                                        <a class="nonblock nontext clearfix grpelem" id="u4863-4" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>mobile text</p></a>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u4853">
+                                        <!-- group -->
+                                    <div class="Button rounded-corners grpelem" id="buttonu4855" onclick="javascript:setemail('buttonu4855')"><!-- container box --></div>
+                                        <a class="nonblock nontext clearfix grpelem" id="u4854-4" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>email</p></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <a class="nonblock nontext clearfix colelem" id="u2543-6" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2543-2">You're all done!</p><p class="Paragraph-Style" id="u2543-4">Thank you for your time.</p></a>
-            <div class="clearfix colelem" id="u2540-6" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                <!-- content -->
-                <br /> <br />
-                <p>You will receive further communications closer to your appointment date.</p>
-                <p>You may now close this page or click &quot;finish&quot; below to be taken to your account page.</p>
-            </div>
-            <div class="clearfix colelem" id="u2549">
-                <!-- group -->
-                    <!-- group -->
-                <a class="block"><!-- Block link tag --></a>
-                <button class="submit-btn NoWrap rounded-corners clearfix grpelem" id="u4230-4" type="submit" value="FINISH" tabindex="3">
+                <a class="nonblock nontext clearfix colelem" id="u2543-6" href="help.html" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"><!-- content --><p class="Paragraph-Style" id="u2543-2">You're all done!</p><p class="Paragraph-Style" id="u2543-4">Thank you for your time.</p></a>
+                <div class="clearfix colelem" id="u2540-6" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
                     <!-- content -->
-                    <div style="margin-top:-18px;height:18px;">
-                        <p>F I N I S H</p>
-                    </div>
-                </button>
+                <p>You will receive further communications closer to your appointment date.</p>
+                    <p>You may now close this page or click &quot;finish&quot; below to be taken to your account page.</p>
+                </div>
+                <div class="clearfix colelem" id="u4889">
+                    <!-- group -->
+                <div class="Button rounded-corners grpelem" id="buttonu4890"><!-- container box --></div>
+                    <a class="nonblock nontext clearfix grpelem" id="u4891-4" onclick="javascript:finish()" data-sizePolicy="fixed" data-pintopage="page_fluidx"><!-- content --><p>F I N I S H</p></a>
+                </div>
             </div>
-            </form>
-        </div>
-        <div class="verticalspacer" data-offset-top="1924" data-content-above-spacer="1923" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
-        <div class="clearfix grpelem" id="pu2206">
-            <!-- column -->
+            <div class="verticalspacer" data-offset-top="1924" data-content-above-spacer="1924" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
+            <div class="clearfix grpelem" id="pu2206">
+                <!-- column -->
             <div class="clip_frame colelem" id="u2206" data-sizePolicy="fixed" data-pintopage="page_fixedCenter">
-                <!-- image -->
-                <img class="block" id="u2206_img" src="images/green5-crop-u2206.jpg?crc=161206401" alt="" width="1358" height="562" />
-            </div>
-            <div class="clearfix colelem" id="u2218-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
-                <!-- content -->
+                    <!-- image -->
+                <img class="block" id="u2206_img" src="images/green5-crop-u2206.jpg?crc=127683376" alt="" width="1358" height="562" />
+                </div>
+                <div class="clearfix colelem" id="u2218-4" data-sizePolicy="fixed" data-pintopage="page_fixedLeft">
+                    <!-- content -->
                 <p>by Hurt Technologies, Inc.</p>
+                </div>
             </div>
         </div>
-    </div>
-</body>  
-</html>
+    </body>
+</html >

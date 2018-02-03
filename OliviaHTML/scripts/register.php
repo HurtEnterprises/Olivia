@@ -56,16 +56,16 @@
             }
             else
             {
-                $passwordhashed = password_hash($loginpassword, PASSWORD_BCRYPT);
+                $passwordhashed = password_hash($password, PASSWORD_DEFAULT);
                 mysqli_query($conn,"INSERT INTO logins (name,password) VALUES ('$loginname','$passwordhashed')");
                 session_start();
                 $_SESSION["user"] = $loginname;
+				$_SESSION["loginTime"] = date('Y-m-d H:i:s');
                 header("Location: ../question-explanation.html");
             }
             
             //Close the connection
             mysqli_close($conn);
         }
-    
+    }
 ?>
-
