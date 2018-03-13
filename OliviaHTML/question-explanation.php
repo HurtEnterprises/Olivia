@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="nojs html css_verticalspacer" lang="en-US">
 
 <head>
@@ -49,8 +49,8 @@
 
             <div class="Paragraph-Style clearfix colelem" id="u1168-4">
                 <!-- content -->
-
-                <p>WELCOME, BRAD</p>
+                $result = mysqli_query($con,"SELECT * FROM Persons");
+                echo "<p> WELCOME, " . $result['FirstName'] . "</td>";
 
             </div>
 
@@ -97,7 +97,7 @@
                                     <div class="Paragraph-Style clearfix colelem" id="u1257-15">
                                         <!-- content -->
 
-                                        <p id="u1257-2">Instead of requiring you to fill out tons of paper at the doctor's office,I will walk you through an easy 10-minute survey that will be sent to the doctor of your choice!</p>
+                                        <p id="u1257-2">Instead of requiring you to fill out tons of paper at the doctor's office, I will walk you through an easy 10-minute survey that will be sent to the doctor of your choice!</p>
 
                                         <p id="u1257-3">&nbsp;</p>
 

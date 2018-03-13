@@ -20,7 +20,8 @@
                 <!-- column -->
                 <div class="Paragraph-Style clearfix colelem" id="u1670-4">
                     <!-- content -->
-                    <p>WELCOME, BRAD</p>
+                    $result = mysqli_query($con,"SELECT * FROM Persons");
+                    echo "<p> WELCOME, " . $result['FirstName'] . "</td>";
                 </div>
                 <div class="colelem" id="u1668"><!-- simple frame --></div>
             </div>
